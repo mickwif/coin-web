@@ -1,0 +1,72 @@
+import { MOONSHOT_URL, PUBLIC_URL, PUBLIC_URL_HOST } from './constants';
+
+type QA = {
+  question: string;
+  answer: string;
+};
+
+export const qanda: QA[] = [
+  {
+    question: 'IS THE COIN AN OFFICIAL YZY PRODUCT',
+    answer: 'YES. THIS IS THE OFFICIAL YZY COIN, DIRECTED BY YE',
+  },
+  {
+    question: 'WHAT IS YEEZY MONEY',
+    answer: 'YEEZY MONEY IS A SUITE OF FINANCIAL SERVICES DESIGNED FOR THE FUTURE ONCHAIN ECONOMY. YEEZY MONEY CONSISTS OF YE PAY, DEBIT CARDS, AND THE YZY TOKEN. YEEZY MONEY IS BUILT FOR BUSINESSES AND INDIVIDUALS THAT WANT TO UNLOCK THE BENEFITS OF CRYPTO ENABLED PAYMENTS AND FINANCIAL RAILS',
+  },
+  {
+    question: 'WHAT IS YE PAY',
+    answer: 'YE PAY IS A CRYPTO PAYMENTS PROCESSOR THAT REMOVES THE HIGH FEES THAT MERCHANTS ARE ACCUSTOMED TO, ACCEPTING USDC AND YZY',
+  },
+  {
+    question: 'WHAT ARE YEEZY MONEY DEBIT CARDS',
+    answer: 'YEEZY MONEY DEBIT CARDS ARE FINANCIAL INSTRUMENTS FOR SPENDING YZY AND USDC GLOBALLY, USEABLE ANYWHERE VISA IS ACCEPTED',
+  },
+  {
+    question: 'WHAT IS THE CONTRACT ADDRESS AND SYMBOL FOR YZY',
+    answer: `<div>
+      <ul>
+        <li><span class="">CONTRACT ADDRESS (CA):</span> ${process.env.NEXT_PUBLIC_YZY_MINT}</li>
+        <li><span class="">SYMBOL:</span> YZY</li>
+      </ul>
+    </div>`,
+  },
+  {
+    question: 'How can I trade YZY',
+    answer: `<div>
+      <ul>
+        <li>YZY WILL TRADE ON METEORA ON SOLANA</li>
+        <li>THE OFFICIAL YZY LIQUIDITY POOL IS:</li>
+        <li>YOU CAN TRADE YZY <a href="https://superstack.xyz/" target="_blank">HERE</a></li>
+      </ul>
+    </div>`,
+  },
+  {
+    question: 'How do I buy YZY with Card',
+    answer: 'CLICK THE BUY BUTTON, FUND YOUR ACCOUNT WITH A DEBIT OR CREDIT CARD VIA MOONPAY, THEN PURCHASE YZY',
+  },
+  {
+    question: `HOW DOES OUR ANTI-SNIPING SYSTEM WORK`,
+    answer: `<p>25 CONTRACT ADDRESSES FOR THE YZY TOKEN HAVE BEEN DEPLOYED, WITH YE SELECTING ONE AT RANDOM FOR THE OFFICIAL YZY TOKEN. THIS DISSUADES SNIPERS BY MAKING IT A 1/25 CHANCE FOR SELECTION OF THE RIGHT CA, PUTTING POWER BACK INTO THE HANDS OF REAL TRADERS</p>`,
+  },
+  {
+    question: 'WHAT BLOCKCHAIN ARE YZY COINS MINTED ON',
+    answer:
+      '<p>ALL YZY COINS ARE MINTED ON THE SOLANA BLOCKCHAIN</p>',
+  },
+  {
+    question: 'HOW IS YZY VESTED',
+    answer: `<div class="custom-text">
+<p>WE USE JUPITER LOCK, AN OPEN-SOURCED AND AUDITED PROTOCOL, TO LOCK AND DISTRIBUTE YZY TOKENS ON-CHAIN. THIS ENSURES A TRANSPARENT, CLIFF-BASED VESTING SCHEDULE ANYONE CAN VERIFY IN REAL TIME. VESTING TOKENS CAN BE VIEWED VIA THE FOLLOWING LINKS</p>
+<div class="tranches" className="tranches">
+<a href="${process.env.NEXT_PUBLIC_TRANCHE_1}">TRANCHE 1</a>
+<a href="${process.env.NEXT_PUBLIC_TRANCHE_2}">TRANCHE 2</a>
+<a href="${process.env.NEXT_PUBLIC_TRANCHE_3}">TRANCHE 3</a>
+</div>
+</div>`,
+  },
+  {
+    question: 'What else should I know',
+    answer: `<p>PLEASE REVIEW IMPORTANT DISCLOSURES REGARDING YZY COIN <a href="/terms" class="">HERE</a></p>`,
+  },
+];
