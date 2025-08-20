@@ -9,12 +9,16 @@ export const useUsdcBalance = () => {
   const {wallet: activeWallet} = useWallet();
 
 
+  const fetchUsdcBalance = async () => {
+    if (!activeWallet?.address) return 0;
+    const balance = await getTokenBalance(getConnection(), activeWallet.address, USDC_MINT.toString());
+    return balance;
+  }
+
   const query = useQuery({
     queryKey: ["usdcBalance", activeWallet?.address],
     queryFn: async () => {
-      if (!activeWallet?.address) return 0;
-      const balance = await getTokenBalance(getConnection(), activeWallet.address, USDC_MINT.toString());
-      return balance;
+      return fetchUsdcBalance();
     },
     enabled: !!activeWallet,
   });
@@ -24,5 +28,6 @@ export const useUsdcBalance = () => {
     isLoading: query.isLoading,
     refetch: query.refetch,
     isRefetching: query.isRefetching,
+    fetchUsdcBalance,
   }
 };

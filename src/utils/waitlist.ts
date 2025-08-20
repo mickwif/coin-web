@@ -14,10 +14,8 @@ export async function joinWaitlist(
           }),
         },
       );
-      if(result.ok) {
-        return true;
-      }
-      return false;
+      const data = await result.json();
+      return data
     } catch (error) {
       console.error('error', error);
       return false;

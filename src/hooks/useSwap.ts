@@ -1,5 +1,5 @@
 import { executeJupiterSwap } from '@/utils/jupiter';
-import { getConnection } from '@/utils/solana';
+import { getConnection, getSOLBalance } from '@/utils/solana';
 import { toastError, toastInfo, toastSuccess, toastWarn } from '@/utils/toast';
 import { ConnectedSolanaWallet } from '@privy-io/react-auth';
 import { useYzyBalance } from './useYzyBalance';
@@ -36,7 +36,7 @@ type SwapProps = {
 
 export const useSwap = () => {
   const { data: yzyBalance, refetch: refetchYzyBalance } = useYzyBalance();
-  const { data: usdcBalance, refetch: refetchUsdcBalance } = useUsdcBalance();
+  const { data: usdcBalance, refetch: refetchUsdcBalance, fetchUsdcBalance } = useUsdcBalance();
   // const { data: solBalance, refetch: refetchSolBalance } = useSolBalance();
   const { data: tokenPrices } = useTokenPrices(
     TokenList.map((token) => token.mint.toString())
@@ -73,10 +73,13 @@ export const useSwap = () => {
       const connection = getConnection();
 
       await validateAndTransferStateWithRetry(connection, activeWallet);
+          // get latest usdc balance
+      const latestUsdcBalance = await fetchUsdcBalance();
 
       const fromTokenPrice = Number(tokenPrices[TOKENS[from].mint].usdPrice);
       const fromAmount = calculateTokenAmount(amount, fromTokenPrice);
-      const fromTokenBalance = from === 'USDC' ? usdcBalance  : yzyBalance;
+      const fromTokenBalance = from === 'USDC' ? latestUsdcBalance  : yzyBalance;
+  
 
       if (Number.isNaN(fromAmount)) {
         throw new Error('Calculated token amount is NaN');
