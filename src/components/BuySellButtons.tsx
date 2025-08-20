@@ -78,9 +78,8 @@ export const BuySellButtons = () => {
     }
 
     if (!authenticated) {
-      // Not logged in: store the action, then log in
-      setPendingAction(action);
       connect();
+      localStorage.setItem('pendingAction', action);
     } else {
       // setIsOpen(true);
       // Already logged in: open the dialog immediately
@@ -96,14 +95,17 @@ export const BuySellButtons = () => {
   }, []);
 
   useEffect(() => {
-    if (ready && authenticated && activeWallet?.address && pendingAction) {
-      setTimeout(() => {
-        showForm(pendingAction);
-        setPendingAction(null);
-        localStorage.removeItem('pendingAction');
-      }, 1000); // Wait 1000ms for login UI to exit
+    if (ready && authenticated && activeWallet?.address) {
+      const pendingAction = localStorage.getItem('pendingAction') as 'BUY' | 'SELL' | 'SEND' | null;
+      if (pendingAction) {
+        setTimeout(() => {
+          showForm(pendingAction);
+          setPendingAction(null);
+          localStorage.removeItem('pendingAction');
+        }, 1000); // Wait 1000ms for login UI to exit
+      }
     }
-  }, [ready, authenticated, activeWallet?.address, pendingAction]);
+  }, [ready, authenticated, activeWallet?.address]);
 
   const showForm = (action: 'BUY' | 'SELL' | 'SEND') => {
     setSelectedTab(action);
@@ -128,6 +130,7 @@ export const BuySellButtons = () => {
 
     // If already authenticated, proceed immediately
     showForm(action);
+    localStorage.removeItem('pendingAction');
     // setIsOpen(true);
   };
 
