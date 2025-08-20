@@ -109,6 +109,10 @@ const Terms = () => {
       </p>
 
       <p>
+      <strong>CLASS ACTION WAIVER.</strong> To the extent permitted by law, you agree that you will not bring, join or participate in any class action lawsuit as to any claim, dispute or controversy that you may have against any of the Covered Parties. You agree to the entry of injunctive relief to stop such a lawsuit or to remove you as a participant in the suit. You agree to pay the attorney's fees and court costs that any Covered Party incurs in seeking such relief. This provision preventing you from bringing, joining or participating in class action lawsuits: (i) does not constitute a waiver of any of your rights or remedies to pursue a claim individually and not as a class action in binding arbitration as provided above; and (ii) is an independent agreement. You may opt-out of these dispute resolution provisions by providing written notice of your decision within thirty (30) days of the date that you first access the Website.
+      </p>
+
+      <p>
         <strong>Privacy Policy.</strong> All comments, information, Registration
         Data and/or materials that you submit through or in association with the
         Services shall be subject to our Privacy Policy, which is hereby

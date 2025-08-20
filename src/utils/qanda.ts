@@ -38,7 +38,7 @@ export const qanda: QA[] = [
     </div>`,
   },
   {
-    question: 'How to trade on mobile',
+    question: 'How to trade YZY on mobile',
     answer: `<div>
       <ul>
         <li>INSTALL THE JUPITER APP FROM THE <a href="https://apps.apple.com/app/id6484069059" target="_blank">APP STORE</a> OR <a href="https://play.google.com/store/apps/details?id=ag.jup.jupiter.android" target="_blank">GOOGLE PLAY</a></li>
@@ -48,11 +48,11 @@ export const qanda: QA[] = [
     </div>`,
   },
   {
-    question: 'How do I buy with a card',
+    question: 'How do I buy YZY with card',
     answer: `<div>
       <ul>
         <li>CLICK THE BUY BUTTON ON HOME PAGE</li>
-        <li>FUND YOUR ACCOUNT WITH A DEBIT OR CREDIT CARD VIA MOONPAY</li>
+        <li>FUND YOUR USDC ACCOUNT WITH A DEBIT OR CREDIT CARD VIA MOONPAY</li>
         <li>PURCHASE YZY</li>
       </ul>
     </div>`,
