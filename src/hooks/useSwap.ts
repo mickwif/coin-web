@@ -73,12 +73,18 @@ export const useSwap = () => {
       const connection = getConnection();
 
       await validateAndTransferStateWithRetry(connection, activeWallet);
-          // get latest usdc balance
-      const latestUsdcBalance = await fetchUsdcBalance();
+     
 
       const fromTokenPrice = Number(tokenPrices[TOKENS[from].mint].usdPrice);
       const fromAmount = calculateTokenAmount(amount, fromTokenPrice);
-      const fromTokenBalance = from === 'USDC' ? latestUsdcBalance  : yzyBalance;
+      let fromTokenBalance = 0;
+      if (from === 'USDC') {
+        // get latest usdc balance
+        const latestUsdcBalance = await fetchUsdcBalance();
+        fromTokenBalance = latestUsdcBalance;
+      } else {
+        fromTokenBalance = yzyBalance;
+      }
   
 
       if (Number.isNaN(fromAmount)) {
