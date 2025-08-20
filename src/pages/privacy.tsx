@@ -4,7 +4,7 @@ const Privacy = () => {
   return (
     <div className="container mx-auto px-4   py-8 space-y-4">
       <p>
-        This website is owned and operated by YEEZY LLC. We respect your privacy
+        This website is owned and operated by Yeezy Investments LLC. We respect your privacy
         and understand that you have a right to know why we collect your
         personal information and what we do with it. This Privacy Policy applies
         to information we collect through our Website (as defined below) as well

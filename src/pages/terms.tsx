@@ -5,9 +5,11 @@ const Terms = () => {
   return (
     <div className="container mx-auto px-4   py-8 space-y-4">
       <h1>TERMS</h1>
+      <p>Yeezy Investments LLC operates this website under license rights granted by Ox Paha Inc.</p>
+      
       <p>
         The website located at <a href={PUBLIC_URL}>{PUBLIC_URL_HOST}</a> (the
-        “Website”) is the intellectual property of YEEZY LLC (hereinafter
+        “Website”) is the intellectual property of Yeezy Investments LLC (hereinafter
         collectively referred to as “we” “our” or “us”). The following Terms and
         Conditions also incorporate by reference our Privacy Policy, and any and
         all other applicable operating rules, policies, schedules and other
@@ -33,7 +35,7 @@ const Terms = () => {
       <p>
         THIS AGREEMENT CONTAINS DISCLAIMERS OF WARRANTIES, LIMITATIONS OF
         LIABILITY, RELEASES, CLASS-ACTION WAIVER, AND THE REQUIREMENT TO
-        ARBITRATE ANY AND ALL CLAIMS THAT MAY ARISE HEREUNDER AGAINST YEEZY LLC,
+        ARBITRATE ANY AND ALL CLAIMS THAT MAY ARISE HEREUNDER AGAINST Yeezy Investments LLC,
         ITS AFFILIATES, MANAGERS, MEMBERS, SERVICE PROVIDERS, PARTNERS,
         ADVISORS, AND VENDORS (COLLECTIVELY, “COVERED PARTIES”), WHO ARE THE
         EXPRESS THIRD-PARTY BENEFICIARIES OF THE MANDATORY ARBITRATION
@@ -49,14 +51,13 @@ const Terms = () => {
         text, photographs, graphics, artwork, information and/or other content
         that may be featured on the Website (the “Website Content,“ and together
         with the Third-Party Links, the “Content“); (d) purchase any of the
-        Solana blockchain-based fungible cryptographic assets known as “Yeezy
-        Coins” or “$YZY” featured on the Website (the “Yeezy Coin”); and/or (e)
+        Solana blockchain-based fungible cryptographic assets known as “YZY” featured on the Website (the “YZY”); and/or (e)
         utilize the various registration forms, contact forms and/or contact
         information made available on the Website.
       </p>
 
       <p>
-        THE YZY COINS ARE INTENDED TO FUNCTION AS AN EXPRESSION OF SUPPORT FOR,
+        THE YZY ARE INTENDED TO FUNCTION AS AN EXPRESSION OF SUPPORT FOR,
         AND ENGAGEMENT WITH, THE IDEALS AND BELIEFS EMBODIED BY THE SYMBOL
         “$YZY” AND THE ASSOCIATED ARTWORK (THE “ARTWORK”) AND ARE NOT INTENDED
         TO BE, OR TO BE THE SUBJECT OF, AN INVESTMENT OPPORTUNITY, INVESTMENT

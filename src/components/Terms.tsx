@@ -5,7 +5,7 @@ export const Terms = () => {
     <div>
       <div className="mx-auto uppercase space-y-4 text-black/20 text-xs">
         <p>
-          YZY Coins are intended to function as an expression of support for and
+          YZY are intended to function as an expression of support for and
           engagement with the ideals and beliefs embodied by the symbol
           &quot;YZY&quot; and the associated artwork and are not intended to be
           or to be the subject of an investment opportunity investment contract
@@ -27,7 +27,6 @@ export const Terms = () => {
         <p>
           See terms and conditions <Link href="/terms">here</Link>
         </p>
-        <p>YEEZY OVER EVERYTHING</p>
       </div>
     </div>
   );
