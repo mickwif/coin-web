@@ -18,8 +18,8 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Yeezy Money</title>
-        <meta property="og:title" content="Yeezy Money" />
+        <title>YZY Money</title>
+        <meta property="og:title" content="YZY Money" />
         <meta property="og:image" content="/og-image.png" />
         <link rel="icon" type="image/png" href="/favicon-fixed.png" />
       </Head>

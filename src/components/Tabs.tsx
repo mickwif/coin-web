@@ -39,7 +39,7 @@ export const Tabs = () => {
       <div className="flex flex-col gap-20">
         {activeTab === 'YZY' && (
           <>
-            <div className="uppercase">YZY is the currency that powers all transactions within Yeezy Money</div>
+            <div className="uppercase">YZY is the currency that powers all transactions within YZY Money</div>
             {/* <Apparel /> */}
             <ContactAddress />
             <div className="uppercase"><a href={`https://jup.ag/tokens/${process.env.NEXT_PUBLIC_YZY_MINT}`} target="_blank">Trade YZY now</a></div>
