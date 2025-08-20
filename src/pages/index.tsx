@@ -31,7 +31,7 @@ const Main = () => {
 
           <div
             className=" 
-            flex flex-col gap-16
+            flex flex-col gap-20
       z-50 pointer-events-auto
       "
           >
@@ -40,7 +40,6 @@ const Main = () => {
             <Tabs />
             {/* <Apparel /> */}
             
-            <div className="border-t border-gray-200"></div>
             <FAQ />
             {/* <PaymentMethods /> */}
             <div className="flex flex-col gap-10">
