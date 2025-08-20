@@ -39,7 +39,7 @@ export const Tabs = () => {
       <div className="flex flex-col gap-20">
         {activeTab === 'YZY' && (
           <>
-            <div className="uppercase">YZY is the currency that powers all transactions and value within the system. YZY holders will unlock exclusive access ON <a href="https://yeezy.com" target="_blank">YEEZY.COM</a></div>
+            <div className="uppercase">YZY is the currency that powers all transactions within Yeezy Money</div>
             {/* <Apparel /> */}
             <ContactAddress />
             <div className="uppercase"><a href={`https://jup.ag/tokens/${process.env.NEXT_PUBLIC_YZY_MINT}`} target="_blank">Trade YZY now</a></div>

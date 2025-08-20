@@ -2,7 +2,7 @@ export const Narrative = () => {
   return (
     <div>
         <div className="uppercase">
-        Yeezy Money is the financial services arm of Yeezy. A system designed to put you in control, free from centralized authority
+        Yeezy Money is a concept to put you in control, free from centralized authority
        </div>
     </div>
   );
