@@ -4,7 +4,7 @@ import {
   QueryClientProvider,
 } from "@tanstack/react-query";
 import dynamic from "next/dynamic";
-
+import { MoonPayProviderWrapper } from "./providers";
 // Dynamically import WalletProvider with SSR disabled
 const WalletProvider = dynamic(
   () => import("clique-wallet-sdk").then((mod) => mod.WalletProvider),
@@ -15,13 +15,13 @@ const WalletProvider = dynamic(
 );
 
 // Dynamically import MoonPay components with SSR disabled
-// const MoonPayProvider = dynamic(
-//   () => import("@moonpay/moonpay-react").then((mod) => mod.MoonPayProvider),
-//   { 
-//     ssr: false,
-//     loading: () => <div className="flex items-center justify-center p-4">Loading...</div>
-//   }
-// );
+const MoonPayProvider = dynamic(
+  () => import("@moonpay/moonpay-react").then((mod) => mod.MoonPayProvider),
+  { 
+    ssr: false,
+    loading: () => <div className="flex items-center justify-center p-4">Loading...</div>
+  }
+);
 
 const queryClient = new QueryClient({
   queryCache: new QueryCache({
@@ -53,11 +53,16 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
         enablePhantom: true,
       }}
     >
-   
-          <QueryClientProvider client={queryClient}>
-            {children}
-          </QueryClientProvider>
-
+    <MoonPayProvider
+        apiKey={process.env.NEXT_PUBLIC_MOONPAY_API_KEY || ""}
+        debug={process.env.NEXT_PUBLIC_MOONPAY_DEBUG === "true"}
+      >
+        <MoonPayProviderWrapper>
+            <QueryClientProvider client={queryClient}>
+              {children}
+            </QueryClientProvider>
+          </MoonPayProviderWrapper>
+        </MoonPayProvider>
     </WalletProvider>
   );
 };

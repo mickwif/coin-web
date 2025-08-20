@@ -31,7 +31,7 @@ const ibmPlexMono = IBM_Plex_Mono({
   subsets: ['latin'],
 });
 
-
+const UseMoonpayForOnramp = process.env.NEXT_PUBLIC_ONRAMP_USE_MOONPAY === 'true';
 
 export const BuyInterface = ({
   activeWallet,
@@ -164,7 +164,7 @@ export const BuyInterface = ({
 
         <div className="space-y-3 flex flex-col items-center">
           <button
-            onClick={buyWithCoinbase}
+            onClick={UseMoonpayForOnramp ? buyWithMoonpay : buyWithCoinbase}
             className="flex items-center gap-2 uppercase"
             disabled={isVisible || isSwapping}
           >
