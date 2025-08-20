@@ -1,9 +1,11 @@
-.custom-text .font-semibold {
-  /* font-weight: 500; */
-}
-
 .custom-text ul {
-  list-style: inside;
+  list-style: outside;
   list-style-type: disc;
   padding-left: 20px;
+  margin-left: 0;
+}
+
+.custom-text li {
+  padding-left: 8px;
+  margin-bottom: 4px;
 }
