@@ -63,9 +63,9 @@ export const Debit = () => {
             </button>
          </div>
          <div className="uppercase pt-20">
-          YZY Card is the debit instrument for spending YZY and USDC globally. Debit cards will let you access your crypto assets at any location that accepts Visa, cutting out middlemen and fees. These will operate as non-custodial cards that let you spend your crypto in the real world without needing to swap to fiat
+         YZY Card is the debit instrument for spending YZY and USDC at millions of merchants worldwide. It operates as a non-custodial card, enabling direct use of crypto without manual fiat conversion or reliance on middlemen
          </div>
-         <div className="uppercase pt-20">Access tens of millions of locations across the globe at any merchant accepting Visa, taking your crypto wherever you go. Cards can be funded with fiat or any non-custodial wallet, supporting a wide range of crypto assets including YZY, USDC, USDT, and others</div>
+         <div className="uppercase pt-20">YZY Card can be funded with fiat or crypto from any non-custodial wallet, supporting assets like YZY, USDC, USDT, and more</div>
       </div>
     );
   };
