@@ -42,7 +42,7 @@ export const Tabs = () => {
             <div className="uppercase">YZY is the currency that powers all transactions and value within the system. EXCLUSIVE MERCH WILL UNLOCK FOR YZY HOLDERS ON YEEZY.COM</div>
             {/* <Apparel /> */}
             <ContactAddress />
-            <div className="uppercase"><a href="https://superstack.xyz/" target="_blank">Trade YZY now</a></div>
+            <div className="uppercase"><a href={`https://superstack.xyz/spot/${process.env.NEXT_PUBLIC_YZY_MINT}`} target="_blank">Trade YZY now</a></div>
             <Allocation />
           </>
         )}

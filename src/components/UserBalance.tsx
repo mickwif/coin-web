@@ -7,12 +7,13 @@ import { useEffect } from 'react';
 export const UserBalance = () => {
   const { data: yzyBal, isLoading: isLoadingYzyBal, refetch: refetchYzyBal } = useYzyBalance();
   const { data: usdcBal, isLoading: isLoadingUsdcBal, refetch: refetchUsdcBal } = useUsdcBalance();
-  const { data: solBal, isLoading: isLoadingSolBal } = useSolBalance();
+  const { data: solBal, isLoading: isLoadingSolBal, refetch: refetchSolBal } = useSolBalance();
 
   useEffect(()=>{
     const interval = setInterval(()=>{
       refetchYzyBal();
       refetchUsdcBal();
+      refetchSolBal();
     }, 10_000)
     return ()=>{
       clearInterval(interval)

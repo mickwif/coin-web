@@ -559,10 +559,10 @@ export const getYZYBalance = async (
       );
 
       // Log raw token accounts data for debugging
-      console.log(
-        'Raw token accounts:',
-        JSON.stringify(tokenAccounts, null, 2)
-      );
+      // console.log(
+      //   'Raw token accounts:',
+      //   JSON.stringify(tokenAccounts, null, 2)
+      // );
 
       // Sum up all YZY balances (in case there are multiple accounts)
       let totalBalance = 0;
