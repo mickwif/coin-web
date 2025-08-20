@@ -41,7 +41,7 @@ export const MoonPayProviderWrapper = ({
   const handleGetSignature = useCallback(async (url: string): Promise<string> => {
     console.log('signing url:', url);
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/api/moonpay/sign`,
+      `/api/moonpay/sign`,
       {
         method: 'POST',
         headers: {
