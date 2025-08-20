@@ -111,6 +111,7 @@ export const BuyInterface = ({
         sessionToken: token,
         redirectUrl: window.location.href,
         partnerUserId,
+        presetCryptoAmount: Number(amount),
       };
       const onrampBuyUrl = getOnrampBuyUrl(params);
       const width = 600;
