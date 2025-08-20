@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import YeezyCard from '../../public/yeezycard.png';
 import { Wallet } from './Wallet';
+import { joinWaitlist } from '../utils/waitlist';
 
 export const Debit = () => {
     const [email, setEmail] = useState('');
@@ -15,9 +16,12 @@ export const Debit = () => {
     const isEmailValid = isValidEmail(email);
     const canClick = isEmailValid && !hasJoined;
 
-    const handleJoinWaitlist = () => {
+    const handleJoinWaitlist = async () => {
         if (canClick) {
-            setHasJoined(true);
+            const success = await joinWaitlist(email);
+            if (success) {
+                setHasJoined(true);
+            }
         }
     };
 
