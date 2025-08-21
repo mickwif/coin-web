@@ -52,7 +52,7 @@ export const qanda: QA[] = [
     answer: `<div>
       <ul>
         <li>CLICK THE BUY BUTTON ON HOME PAGE</li>
-        <li>FUND YOUR USDC ACCOUNT WITH A DEBIT OR CREDIT CARD VIA MOONPAY</li>
+        <li>FUND YOUR USDC ACCOUNT WITH A DEBIT OR CREDIT CARD VIA COINBASE</li>
         <li>PURCHASE YZY</li>
       </ul>
     </div>`,
