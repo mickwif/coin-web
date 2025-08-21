@@ -41,7 +41,7 @@ export const qanda: QA[] = [
     question: 'How to trade YZY on mobile',
     answer: `<div>
       <ul>
-        <li>INSTALL THE JUPITER APP FROM THE <a href="https://apps.apple.com/app/id6484069059" target="_blank">APP STORE</a> OR <a href="https://play.google.com/store/apps/details?id=ag.jup.jupiter.android" target="_blank">GOOGLE PLAY</a></li>
+        <li>INSTALL THE MOONSHOT APP FROM THE <a href="https://moonshot.com?ref=KlLkYUucPF" target="_blank">APP STORE</a> OR <a href="https://moonshot.com?ref=KlLkYUucPF" target="_blank">GOOGLE PLAY</a></li>
         <li>OPEN THE APP AND SEARCH BY ${process.env.NEXT_PUBLIC_YZY_MINT}</li>
         <li>PURCHASE YZY</li>
       </ul>
