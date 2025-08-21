@@ -69,11 +69,23 @@ export const qanda: QA[] = [
   {
     question: 'HOW IS YZY VESTED',
     answer: `<div class="custom-text">
-<p>WE USE JUPITER LOCK, AN OPEN-SOURCED AND AUDITED PROTOCOL, TO LOCK AND DISTRIBUTE YZY ON-CHAIN. THIS ENSURES A TRANSPARENT, CLIFF-BASED VESTING SCHEDULE ANYONE CAN VERIFY IN REAL TIME. VESTING CAN BE VIEWED VIA THE FOLLOWING LINKS</p>
+<p>WE USE JUPITER LOCK, AN OPEN-SOURCED AND AUDITED PROTOCOL, TO LOCK AND DISTRIBUTE YZY ON-CHAIN. THIS ENSURES A TRANSPARENT, CLIFF-BASED VESTING SCHEDULE ANYONE CAN VERIFY IN REAL TIME. VESTING CAN BE VIEWED VIA THE FOLLOWING TRANCHE LINKS</p>
 <div class="tranches" className="tranches">
-<a href="${process.env.NEXT_PUBLIC_TRANCHE_1}">TRANCHE 1</a>
-<a href="${process.env.NEXT_PUBLIC_TRANCHE_2}">TRANCHE 2</a>
-<a href="${process.env.NEXT_PUBLIC_TRANCHE_3}">TRANCHE 3</a>
+<a href="${process.env.NEXT_PUBLIC_TRANCHE_1A}">1A</a>
+<a href="${process.env.NEXT_PUBLIC_TRANCHE_1B}">1B</a>
+<a href="${process.env.NEXT_PUBLIC_TRANCHE_1C}">1C</a>
+<a href="${process.env.NEXT_PUBLIC_TRANCHE_1D}">1D</a>
+<a href="${process.env.NEXT_PUBLIC_TRANCHE_1E}">1E</a>
+<a href="${process.env.NEXT_PUBLIC_TRANCHE_2A}">2A</a>
+<a href="${process.env.NEXT_PUBLIC_TRANCHE_2B}">2B</a>
+<a href="${process.env.NEXT_PUBLIC_TRANCHE_2C}">2C</a>
+<a href="${process.env.NEXT_PUBLIC_TRANCHE_2D}">2D</a>
+<a href="${process.env.NEXT_PUBLIC_TRANCHE_2E}">2E</a>
+<a href="${process.env.NEXT_PUBLIC_TRANCHE_3A}">3A</a>
+<a href="${process.env.NEXT_PUBLIC_TRANCHE_3B}">3B</a>
+<a href="${process.env.NEXT_PUBLIC_TRANCHE_3C}">3C</a>
+<a href="${process.env.NEXT_PUBLIC_TRANCHE_3D}">3D</a>
+<a href="${process.env.NEXT_PUBLIC_TRANCHE_3E}">3E</a>
 </div>
 </div>`,
   },
