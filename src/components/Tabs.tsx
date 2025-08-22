@@ -45,7 +45,7 @@ export const Tabs = () => {
             <div className="uppercase"><a href={`https://jup.ag/tokens/${process.env.NEXT_PUBLIC_YZY_MINT}`} target="_blank">Trade YZY now</a></div>
             <div className="uppercase">
             <a
-              href="https://moonshot.com?ref=KlLkYUucPF"
+              href="https://moonshot.com"
               target="_blank"
               onClick={(e) => {
                 e.preventDefault();
@@ -54,9 +54,9 @@ export const Tabs = () => {
                 const isIOS = /iPad|iPhone|iPod/.test(ua);
                 const isAndroid = /android/i.test(ua);
 
-                const iosStore = "https://moonshot.com?ref=KlLkYUucPF";
-                const androidStore = "https://moonshot.com?ref=KlLkYUucPF";
-                const universal = "https://moonshot.com?ref=KlLkYUucPF";
+                const iosStore = "https://moonshot.com";
+                const androidStore = "https://moonshot.com";
+                const universal = "https://moonshot.com";
 
                 if (!isIOS && !isAndroid) {
                   window.open(iosStore, "_blank", "noopener");
