@@ -9,7 +9,7 @@ import { isValidAddress } from '@/utils/solana';
 import { LoaderCircleIcon } from 'lucide-react';
 import { CurrencyInput } from './CurrencyInput';
 import { IBM_Plex_Mono } from 'next/font/google';
-import { WalletClient } from 'clique-wallet-sdk';  ;
+import { WalletClient } from 'yeezy-wallet-sdk';  ;
 import { WalletButton } from './WalletButton';
 const ibmPlexMono = IBM_Plex_Mono({
   weight: ['400', '500', '600'],

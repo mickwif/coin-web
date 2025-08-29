@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
       pure: true,
     },
   },
-  transpilePackages: ['clique-wallet-sdk'],
+  transpilePackages: ['yeezy-wallet-sdk'],
 };
 
 export default nextConfig;

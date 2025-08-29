@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useActiveWallet } from "./useActiveEmbeddedWallet";
 import { USDC_MINT } from "@/utils/constants";
 import { getConnection, getTokenBalance } from "@/utils/solana";
-import { useWallet } from 'clique-wallet-sdk';  
+import { useWallet } from 'yeezy-wallet-sdk';  
 
 export const useUsdcBalance = () => {
   // const activeWallet = useActiveWallet();

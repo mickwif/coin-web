@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { UserBalance } from './UserBalance';
 // import { useActiveWallet, usePhantomWallet } from '@/hooks/useActiveEmbeddedWallet';
 import { toastInfo } from '@/utils/toast';
-import { useConnect,useWalletStatus,useActiveWallet } from 'clique-wallet-sdk';  
+import { useConnect,useWalletStatus,useActiveWallet } from 'yeezy-wallet-sdk';  
 import { BuySellButtons } from './BuySellButtons';
 
 export const WalletButton = ({ onClose }: { onClose?: () => void }) => {

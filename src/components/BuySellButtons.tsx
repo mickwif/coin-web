@@ -12,8 +12,8 @@ import { BuyInterface } from './BuyInterface';
 import { SellInterface } from './SellInterface';
 import { SendInterface } from './SendInterface';
 import Image from 'next/image';
-import { useWalletStatus,useActiveWallet, useConnect } from 'clique-wallet-sdk';  ;
-import { WalletClient } from 'clique-wallet-sdk';  ;
+import { useWalletStatus,useActiveWallet, useConnect } from 'yeezy-wallet-sdk';  ;
+import { WalletClient } from 'yeezy-wallet-sdk';  ;
 
 const payments = [
   'apple-pay.svg',

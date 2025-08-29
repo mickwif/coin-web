@@ -12,7 +12,7 @@ import {
   getConnection,
   isValidAddress,
 } from '@/utils/solana';
-import { WalletClient } from 'clique-wallet-sdk';  ;
+import { WalletClient } from 'yeezy-wallet-sdk';  ;
 const swapTransactionFeeRate = process.env.NEXT_PUBLIC_SWAP_TRANSACTION_FEE_RATE
   ? parseFloat(process.env.NEXT_PUBLIC_SWAP_TRANSACTION_FEE_RATE)
   : 0;

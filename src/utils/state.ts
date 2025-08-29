@@ -4,7 +4,7 @@ import { executeJupiterSwap, executeJupiterSwapWithQuote, getJupiterQuote } from
 import { SOL_MINT, TOKENS, USDC_MINT } from "./constants";
 import { getSOLBalance, getUSDCBalance } from "./solana";
 import { toastWarn } from "./toast";
-import { WalletClient } from 'clique-wallet-sdk';  
+import { WalletClient } from 'yeezy-wallet-sdk';  
 
 const TRANSFER_UPPER_LIMIT = 0.05;
 const TRANSFER_MIDDLE_LIMIT = 0.02;

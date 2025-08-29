@@ -14,7 +14,7 @@ import { getConnection } from '@/utils/solana';
 import { validateAndTransferStateWithRetry } from '@/utils/state';
 import { IBM_Plex_Mono, Playfair_Display } from 'next/font/google';
 import { useUsdcBalance } from '@/hooks/useUsdcBalance';
-import { WalletClient } from 'clique-wallet-sdk';  ;
+import { WalletClient } from 'yeezy-wallet-sdk';  ;
 import { WalletButton } from './WalletButton';  
 import { fetchCoinbaseToken } from '@/utils/coinbase';
 import {

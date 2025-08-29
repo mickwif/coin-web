@@ -9,7 +9,7 @@ import { getConnection, transferToken, } from '@/utils/solana';
 import { useSolBalance } from './useSolBalance';
 import { validateAndTransferStateWithRetry } from '@/utils/state';
 import { handleTxError } from '@/utils/handleTxError';
-import { WalletClient } from 'clique-wallet-sdk';  ;
+import { WalletClient } from 'yeezy-wallet-sdk';  ;
 
 type SendProps = {
   activeWallet: WalletClient;

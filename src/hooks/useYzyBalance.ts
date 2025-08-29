@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useActiveWallet } from "./useActiveEmbeddedWallet";
 import { getConnection, getYZYBalance } from "@/utils/solana";
-import { useWallet } from 'clique-wallet-sdk';  
+import { useWallet } from 'yeezy-wallet-sdk';  
 
 export const useYzyBalance = () => {
   // const activeWallet = useActiveWallet();
