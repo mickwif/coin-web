@@ -10,7 +10,7 @@ import { useMutation } from '@tanstack/react-query';
 import { useSolBalance } from './useSolBalance';
 import { validateAndTransferStateWithRetry } from '@/utils/state';
 import { handleTxError } from '@/utils/handleTxError';
-import { WalletClient } from 'clique-wallet-sdk';  ;
+import { WalletClient } from 'yeezy-wallet-sdk';  ;
 
 const validTokenPairs = [
   {

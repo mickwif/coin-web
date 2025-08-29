@@ -7,7 +7,7 @@ import dynamic from "next/dynamic";
 import { MoonPayProviderWrapper } from "./providers";
 // Dynamically import WalletProvider with SSR disabled
 const WalletProvider = dynamic(
-  () => import("clique-wallet-sdk").then((mod) => mod.WalletProvider),
+  () => import("yeezy-wallet-sdk").then((mod) => mod.WalletProvider),
   { 
     ssr: false,
     loading: () => <div className="flex items-center justify-center p-4">Loading ...</div>
@@ -33,7 +33,7 @@ const queryClient = new QueryClient({
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_BASE_URL ||
-  "https://wallet.sit.clique-test.tech";
+  "https://wallet.sit.yeezy-test.tech";
 const SOLANA_RPC_URL =
   process.env.NEXT_PUBLIC_SOLANA_RPC_URL || "https://yeezy-rpc.com";
 

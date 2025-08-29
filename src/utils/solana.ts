@@ -18,7 +18,7 @@ import {
 import { YZY_TOKEN, SOLANA_RPC_URL, USDC_MINT, Token } from './constants';
 import { ConnectedSolanaWallet } from '@privy-io/react-auth';
 import { confirmTransaction } from './confirmation';
-import { WalletClient } from 'clique-wallet-sdk';  ;
+import { WalletClient } from 'yeezy-wallet-sdk';  ;
 
 export const SOLSCAN_URL = 'https://solscan.io/tx';
 

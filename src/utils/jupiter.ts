@@ -18,7 +18,7 @@ import { ReferralProvider } from "@jup-ag/referral-sdk";
 import { resolve } from "path";
 import { confirmTransaction } from "./confirmation";
 
-import { WalletClient } from 'clique-wallet-sdk';  
+import { WalletClient } from 'yeezy-wallet-sdk';  
 const JUPITER_SWAP_API_URL = process.env.NEXT_PUBLIC_JUPITER_SWAP_API || "https://api.jup.ag/swap/v1";
 const MAX_PRIORITY_FEE_LAMPORTS = Math.max(Number(process.env.NEXT_PUBLIC_MAX_PRIORITY_FEE_LAMPORTS || 2000000), 2000000);
 
