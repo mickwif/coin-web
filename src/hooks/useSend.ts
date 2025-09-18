@@ -12,7 +12,7 @@ import { handleTxError } from '@/utils/handleTxError';
 import { WalletClient } from 'yeezy-wallet-sdk';  ;
 
 type SendProps = {
-  activeWallet: WalletClient;
+  activeWallet: ConnectedSolanaWallet;
   amount: number;
   recipientWalletAddress: string;
   token: 'USDC' | 'YZY';

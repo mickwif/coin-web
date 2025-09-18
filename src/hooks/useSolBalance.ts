@@ -3,8 +3,8 @@ import { useActiveWallet } from "./useActiveEmbeddedWallet";
 import { getConnection, getSOLBalance } from "@/utils/solana";
 import { useWallet } from 'yeezy-wallet-sdk';  
 export const useSolBalance = () => {
-  // const activeWallet = useActiveWallet();
-  const {wallet: activeWallet} = useWallet();
+  const {wallet:activeWallet }= useActiveWallet();
+  // const {wallet: activeWallet} = useWallet();
 
   const query = useQuery({
     queryKey: ["solBalance", activeWallet?.address],

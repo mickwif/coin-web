@@ -37,7 +37,7 @@ export const BuyInterface = ({
   activeWallet,
   onClose,
 }: {
-  activeWallet: WalletClient;
+  activeWallet: ConnectedSolanaWallet;
   onClose?: () => void;
 }) => {
   const { setBaseCurrencyAmount, setIsVisible, isVisible, setWalletAddress } = useMoonPay();
@@ -106,7 +106,7 @@ export const BuyInterface = ({
     if (!activeWallet?.address) return;
     const token = await fetchCoinbaseToken(activeWallet.address, 'SOL');
     if (token) {
-      const partnerUserId = activeWallet?.id + '_' + Date.now();
+      const partnerUserId = activeWallet?.address + '_' + Date.now();
       const params: GetOnrampUrlWithSessionTokenParams = {
         sessionToken: token,
         redirectUrl: window.location.href,

@@ -135,7 +135,7 @@ const getAccountRentExempt = async (
 
 export const estimateTransactionFee = async (
   connection: Connection,
-  fromWallet: WalletClient,
+  fromWallet: ConnectedSolanaWallet,
   toAddress: string
 ) => {
   try {
@@ -353,7 +353,7 @@ export const transferSOL = async (
 // Transfer YZY tokens with versioned transactions
 export const transferToken = async (
   connection: Connection,
-  fromWallet: WalletClient,
+  fromWallet: ConnectedSolanaWallet,
   toAddress: string,
   amount: number,
   token: Token
@@ -485,7 +485,7 @@ export const transferToken = async (
     let signature;
     try {
       // Sign transaction
-      const signed = await fromWallet.signSolanaTransaction(transaction);
+      const signed = await fromWallet.signTransaction(transaction);
 
       signature = await sendTransactionWithRetry(connection, signed);
 

@@ -1,42 +1,42 @@
 import { usePrivy, useLogout, useLogin } from '@privy-io/react-auth';
 import { useState, useEffect, useRef } from 'react';
 import { UserBalance } from './UserBalance';
-// import { useActiveWallet, usePhantomWallet } from '@/hooks/useActiveEmbeddedWallet';
+import { useActiveWallet, usePhantomWallet } from '@/hooks/useActiveEmbeddedWallet';
 import { toastInfo } from '@/utils/toast';
-import { useConnect,useWalletStatus,useActiveWallet } from 'yeezy-wallet-sdk';  
+// import { useConnect,useWalletStatus,useActiveWallet } from 'yeezy-wallet-sdk';  
 import { BuySellButtons } from './BuySellButtons';
 
 export const WalletButton = ({ onClose }: { onClose?: () => void }) => {
-  // const { ready, authenticated, login, connectOrCreateWallet } =
-  //   usePrivy();
+  const { ready, authenticated, login:connect, connectOrCreateWallet, } =
+    usePrivy();
   // const activeWallet = useActiveWallet();
-  // const phantomWallet = usePhantomWallet();
+  const phantomWallet = usePhantomWallet();
 
-  const { isAuthenticated, error, isInitialized } = useWalletStatus();
-  const {connect,disconnect} = useConnect();
+  // const { isAuthenticated, error, isInitialized } = useWalletStatus();
+  // const {connect,disconnect} = useConnect();
   const {wallet: activeWallet} = useActiveWallet();
-  console.log("activeWallet", activeWallet, isAuthenticated, isInitialized);
-  // const {logout} = useLogout({
-  //   onSuccess: () => {
-  //     console.log('User logged out');
+  console.log("activeWallet", activeWallet, authenticated, ready);
+  const {logout:disconnect} = useLogout({
+    onSuccess: () => {
+      console.log('User logged out');
     
-  //     if (phantomWallet?.isConnected()) {
-  //       console.log("disconnecting phantom wallet");
-  //       // Not all wallet clients support programmatic disconnects (e.g. MetaMask, Phantom).
-  //       // In kind, if the wallet's client does not support programmatic disconnects, this method will no-op.
-  //       // So here we are just disconnect phantom in privy state.
-  //       // But in phantom wallet, it will still be connected.
-  //       phantomWallet.disconnect();
-  //     }
-  //   },
-  // });
+      if (phantomWallet?.isConnected()) {
+        console.log("disconnecting phantom wallet");
+        // Not all wallet clients support programmatic disconnects (e.g. MetaMask, Phantom).
+        // In kind, if the wallet's client does not support programmatic disconnects, this method will no-op.
+        // So here we are just disconnect phantom in privy state.
+        // But in phantom wallet, it will still be connected.
+        phantomWallet.disconnect();
+      }
+    },
+  });
 
   const handleLogin = () => {
-    if (!isInitialized) {
+    if (!ready) {
       return;
     }
 
-    if (isInitialized && isAuthenticated && !activeWallet) {
+    if (ready && authenticated && !activeWallet) {
       console.log("no active wallet, logging out first to clear state");
       // logout();
       disconnect();
@@ -48,7 +48,7 @@ export const WalletButton = ({ onClose }: { onClose?: () => void }) => {
   };
 
   useEffect(() => {
-    if (isInitialized && isAuthenticated) {
+    if (ready && authenticated) {
       const timeout = setTimeout(() => {
         if (!activeWallet) {
           console.log("no active wallet after delay, logging out");
@@ -58,9 +58,9 @@ export const WalletButton = ({ onClose }: { onClose?: () => void }) => {
 
       return () => clearTimeout(timeout);
     }
-  }, [isInitialized, isAuthenticated, activeWallet, disconnect]);
+  }, [ready, authenticated, activeWallet, disconnect]);
 
-  if (!isInitialized)
+  if (!ready)
     return (
       <div>
         {/* to prevent layout shift */}
@@ -72,7 +72,7 @@ export const WalletButton = ({ onClose }: { onClose?: () => void }) => {
 
   return (
     <div>
-      {isInitialized && isAuthenticated && activeWallet?.address ? (
+      {ready && authenticated && activeWallet?.address ? (
         <WalletWidget walletAddress={activeWallet.address} logout={disconnect} onClose={onClose} />
       ) : (
         <button onClick={handleLogin} className=" ">

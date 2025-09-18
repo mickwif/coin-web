@@ -4,8 +4,8 @@ import { getConnection, getYZYBalance } from "@/utils/solana";
 import { useWallet } from 'yeezy-wallet-sdk';  
 
 export const useYzyBalance = () => {
-  // const activeWallet = useActiveWallet();
-  const {wallet: activeWallet} = useWallet();
+  const {wallet:activeWallet }= useActiveWallet();
+  // const {wallet: activeWallet} = useWallet();
 
 
   const query = useQuery({

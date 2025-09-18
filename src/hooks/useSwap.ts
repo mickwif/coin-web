@@ -28,7 +28,7 @@ const calculateTokenAmount = (amount: number, tokenPrice: number) => {
 };
 
 type SwapProps = {
-  activeWallet: WalletClient;
+  activeWallet: ConnectedSolanaWallet;
   amount: number; // assume in usd
   tokenPair: (typeof validTokenPairs)[number];
   slippage: number;

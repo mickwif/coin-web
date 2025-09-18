@@ -22,7 +22,7 @@ export const SellInterface = ({
   activeWallet,
   onClose,
 }: {
-  activeWallet: WalletClient;
+  activeWallet: ConnectedSolanaWallet;
   onClose?: () => void;
 }) => {
   const [amount, setAmount] = useState('0');

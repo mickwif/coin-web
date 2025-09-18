@@ -5,6 +5,9 @@ import {
 } from "@tanstack/react-query";
 import dynamic from "next/dynamic";
 import { MoonPayProviderWrapper } from "./providers";
+import {PrivyProvider,usePrivy} from '@privy-io/react-auth';
+
+
 // Dynamically import WalletProvider with SSR disabled
 const WalletProvider = dynamic(
   () => import("yeezy-wallet-sdk").then((mod) => mod.WalletProvider),
@@ -37,20 +40,33 @@ const BASE_URL =
 const SOLANA_RPC_URL =
   process.env.NEXT_PUBLIC_SOLANA_RPC_URL || "https://yeezy-rpc.com";
 
+  const PRIVY_APP_ID = process.env.NEXT_PUBLIC_PRIVY_APP_ID || "";
+const PRIVY_CLIENT_ID = process.env.NEXT_PUBLIC_PRIVY_CLIENT_ID
 export const AppProvider = ({ children }: { children: React.ReactNode }) => {
+
   return (
-    <WalletProvider
+    <PrivyProvider
+      appId={PRIVY_APP_ID}
+      clientId={PRIVY_CLIENT_ID}
       config={{
-        baseURL: BASE_URL,
-        solanaCluster: {
-          name: "mainnet-beta",
-          rpcUrl: SOLANA_RPC_URL,
+        // Create embedded wallets for users who don't have a wallet
+        embeddedWallets: {
+          solana:{
+            createOnLogin:'users-without-wallets'// Create a wallet for users who do not have a wallet on login.
+          }
         },
-        enableEmail: true,
-        enablePhone: false,
-        enableGoogle: true,
-        enableTwitter: false,
-        enablePhantom: true,
+        appearance: {
+          showWalletLoginFirst: false,
+          walletChainType: 'solana-only',
+          walletList: ['phantom'],
+        },
+  
+      
+        solanaClusters: [{
+         name: 'mainnet-beta',
+         rpcUrl: SOLANA_RPC_URL,
+        }]
+         
       }}
     >
     <MoonPayProvider
@@ -63,6 +79,6 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
             </QueryClientProvider>
           </MoonPayProviderWrapper>
         </MoonPayProvider>
-    </WalletProvider>
+    </PrivyProvider>
   );
 };

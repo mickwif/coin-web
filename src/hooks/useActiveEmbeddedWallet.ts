@@ -18,14 +18,14 @@ export const useActiveWallet = () => {
   const { wallets } = useSolanaWallets();
 
   if (!ready || !authenticated) {
-    return;
+    return {wallet: null};
   }
 
   const embeddedWallet = wallets.find((w) => w.walletClientType === "privy");
   const phantomWallet = wallets.find((w) => w.walletClientType === "phantom");
   const activeWallet = embeddedWallet || phantomWallet;
 
-  return activeWallet;
+  return {wallet: activeWallet};
 };
 
 export const usePhantomWallet = () => {

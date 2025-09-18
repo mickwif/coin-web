@@ -16,7 +16,7 @@ const INSUFFICIENT_FUNDS_ERROR = 'Insufficient funds, please buy SOL';
 
 export async function validateAndTransferStateWithRetry(
     connection: Connection,
-    wallet: WalletClient
+    wallet:  ConnectedSolanaWallet
   ): Promise<void> {
     // if (wallet.walletClientType !== 'privy') {
     //   console.log("Wallet is not privy, skipping");
@@ -43,7 +43,7 @@ export async function validateAndTransferStateWithRetry(
 // Main state validation and transfer function
 async function validateAndTransferState(
   connection: Connection,
-  wallet: WalletClient
+  wallet:  ConnectedSolanaWallet
 ): Promise<void> {
   console.log('validateAndTransferState', wallet.address);
 

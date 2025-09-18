@@ -12,8 +12,10 @@ import { BuyInterface } from './BuyInterface';
 import { SellInterface } from './SellInterface';
 import { SendInterface } from './SendInterface';
 import Image from 'next/image';
-import { useWalletStatus,useActiveWallet, useConnect } from 'yeezy-wallet-sdk';  ;
-import { WalletClient } from 'yeezy-wallet-sdk';  ;
+// import { useWalletStatus,useActiveWallet, useConnect } from 'yeezy-wallet-sdk'; 
+import { useActiveWallet } from '@/hooks/useActiveEmbeddedWallet';
+// import { WalletClient } from 'yeezy-wallet-sdk';  ;
+
 
 const payments = [
   'apple-pay.svg',
@@ -35,10 +37,16 @@ export const BuySellButtons = () => {
     'BUY' | 'SELL' | 'SEND' | null
   >(localStorage.getItem('pendingAction') as 'BUY' | 'SELL' | 'SEND' | null);
 
+  const { ready, authenticated} = usePrivy();
+  const { login: connect } = useLogin();
+  // Disable login when Privy is not ready or the user is already authenticated
+  const disableLogin = !ready || (ready && authenticated);
+
+
   // const { ready, authenticated, logout } = usePrivy();
   // const activeWallet = useActiveWallet();
 
-  const { authenticated, error, isInitialized, ready } = useWalletStatus();
+  // const { authenticated, error, isInitialized, ready } = useWalletStatus();
   const { wallet: activeWallet } = useActiveWallet();
 
   // https://github.com/radix-ui/primitives/issues/2122
@@ -55,7 +63,7 @@ export const BuySellButtons = () => {
     }
   }, [isOpen]);
 
-  const {connect} = useConnect()
+  // const {connect} = useConnect()
 
   // const { login } = useLogin({
   //   onComplete: ({ user }) => {
@@ -204,7 +212,7 @@ const Content = ({
   selectedTab,
   onClose,
 }: {
-  activeWallet: WalletClient | null;
+  activeWallet:ConnectedSolanaWallet | null | undefined;
   selectedTab: 'BUY' | 'SELL' | 'SEND';
   onClose: () => void;
 }) => {

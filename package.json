@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "^1.1.5",
+    "@coinbase/onchainkit": "^0.38.17",
     "@jup-ag/referral-sdk": "^0.1.7",
     "@moonpay/moonpay-js": "^0.6.4",
     "@moonpay/moonpay-react": "^1.8.8",
@@ -37,7 +38,6 @@
     "bs58": "^6.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "@coinbase/onchainkit": "^0.38.17",
     "framer-motion": "^12.0.6",
     "lodash": "^4.17.21",
     "lucide-react": "^0.474.0",

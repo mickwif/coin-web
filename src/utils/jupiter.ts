@@ -339,7 +339,7 @@ async function checkBalanceBeforeSwap(connection: Connection, quoteResponse: Quo
 
 export async function executeJupiterSwap(
   connection: Connection,
-  wallet: WalletClient,
+  wallet:  ConnectedSolanaWallet,
   inputMint: string,
   outputMint: string,
   amount: number,
@@ -365,7 +365,7 @@ export async function executeJupiterSwap(
 
 export async function executeJupiterSwapWithQuote(
   connection: Connection,
-  wallet: WalletClient,
+  wallet:  ConnectedSolanaWallet,
   quoteResponse: QuoteResponse,
   sendWithConnection: boolean = true,
 ): Promise<string> {
@@ -407,13 +407,13 @@ export async function executeJupiterSwapWithQuote(
 
     let signature;
     if (sendWithConnection) {
-      const signed = await wallet.signSolanaTransaction(transaction);
+      const signed = await wallet.signTransaction(transaction);
       signature = await connection.sendRawTransaction(signed.serialize(), {
         maxRetries: 3,
         skipPreflight: false,
       });
     } else {
-      const signed = await wallet.signSolanaTransaction!(transaction);
+      const signed = await wallet.signTransaction(transaction);
       signature = await connection.sendRawTransaction(signed.serialize(), {
         maxRetries: 3,
         skipPreflight: false,
