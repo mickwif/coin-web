@@ -25,7 +25,7 @@ export function OptionsPage({
   setSendRecipientWalletAddress,
   handleSendFormSubmit,
 }: OptionsPageProps) {
-  const activeWallet = useActiveWallet();
+  const {wallet:activeWallet }= useActiveWallet();
   const [isValid, setIsValid] = useState(true);
   const [isSame, setIsSame] = useState(false);
   const options =
