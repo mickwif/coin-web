@@ -31,7 +31,7 @@ interface PaymentAdditionalInfoProps {
   setNestedDrawerOpen: (open: boolean) => void;
   sendRecipientWalletAddress: string;
   formatNumber: (value: string) => string;
-  selectedWallet: WalletClient | undefined;
+  selectedWallet: ConnectedSolanaWallet | undefined;
 }
 
 export function PaymentAdditionalInfo({
