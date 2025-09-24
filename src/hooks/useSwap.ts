@@ -110,10 +110,25 @@ export const useSwap = () => {
         toastSuccess(`${from ==='YZY'?'SOLD':'BOUGHT'} $YZY SUCCESSFULLY`);
         refetchYzyBalance();
         refetchUsdcBalance();
+        try {
+          // Notify parent iframe if embedded
+          const payload = {
+            action: from === 'USDC' ? 'BUY' : 'SELL',
+            token: from === 'USDC' ? 'USDC' : 'YZY' as 'USDC'|'YZY',
+            amount,
+            signature: txHash,
+          };
+          window?.parent?.postMessage({ type: 'payment:success', payload }, '*');
+        } catch (err) {
+          // no-op
+        }
         return txHash;
       } catch (e) {
         // console.error('Swap error:', e);
          handleTxError(e);
+         try {
+          window?.parent?.postMessage({ type: 'payment:error', payload: { action: from === 'USDC' ? 'BUY' : 'SELL', error: String((e as any)?.message || e) } }, '*');
+         } catch {}
       }
     },
   });

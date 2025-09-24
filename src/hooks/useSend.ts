@@ -92,8 +92,16 @@ export const useSend = () => {
           refetchYzyBalance();
         }
 
+        try {
+          const payload = { action: 'SEND', token, amount, signature: txHash };
+          window?.parent?.postMessage({ type: 'payment:success', payload }, '*');
+        } catch {}
+
       } catch (e: any) {
         handleTxError(e)
+        try {
+          window?.parent?.postMessage({ type: 'payment:error', payload: { action: 'SEND', error: String(e?.message || e) } }, '*');
+        } catch {}
       }
     },
   });

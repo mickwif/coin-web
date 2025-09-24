@@ -1,6 +1,7 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { IBM_Plex_Mono } from 'next/font/google';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { Analytics } from '@vercel/analytics/react';
 
@@ -15,6 +16,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -40,7 +42,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 />
 
                 <Component {...pageProps} />
-                <Analytics />
+                {router.pathname !== '/embed' && <Analytics />}
               </div>
               </AppProvider>
     </>
